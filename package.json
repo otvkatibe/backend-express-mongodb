@@ -7,7 +7,7 @@
   "scripts": {
     "start:app": "nodemon api/index.js",
     "start:database": "docker-compose up -d",
-    "restart:database": "docker-compose down && docker-compose up -d"
+    "stop:database": "docker-compose down"
   },
   "author": "",
   "license": "ISC",
