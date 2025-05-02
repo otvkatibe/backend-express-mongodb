@@ -10,8 +10,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/users", userRoute);
 app.use("/", userRoute);
+app.use("/SecuredRoute", userRoute);
+app.use("/users", userRoute);
 
 app.get("/", (req, res) => {
     res.send("EXPRESS BACKEND COM MONGODB");
