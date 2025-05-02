@@ -80,7 +80,25 @@ const login = async (req, res) => {
     }
 }
 
+const getAllUsers = async (req, res) => {
+    try {
+        console.log("Fetching all users");
+        const users = await User.find();
+        if (!users || users.length === 0) {
+            console.log("No users found");
+            return res.status(404).json({ message: 'No users found' });
+        }
+        console.log("Users found:", users);
+        res.status(200).json(users);
+    }
+    catch (error) {
+        console.error("Error fetching users:", error);
+        return res.status(500).json({ message: `Error fetching users: ${error}` });
+    }
+}
+
 export default { 
     register,
-    login
+    login,
+    getAllUsers
 };
