@@ -5,4 +5,4 @@ curl --request POST \
     "name": "newuser",
     "email": "lala@gmail.com",
     "password": "securepassword123"
-    }'
+  }'
