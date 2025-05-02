@@ -1,8 +1,8 @@
 curl --request POST \
-  --url 'http://localhost:3000/users/register' \
+  --url 'https://backend-express-mongodb-six.vercel.app/users/login' \
   --header 'Content-Type: application/json' \
   --data '{
     "name": "newuser",
-    "email": "lala@gmail.com",
+    "email": "lalalala@gmail.com",
     "password": "securepassword123"
-  }'
+    }'

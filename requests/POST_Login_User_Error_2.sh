@@ -3,6 +3,6 @@ curl --request POST \
   --header 'Content-Type: application/json' \
   --data '{
     "name": "newuser",
-    "email": "lalala@gmail.com",
+    "email": "Lalalalagmail",
     "password": "securepassword123"
     }'
