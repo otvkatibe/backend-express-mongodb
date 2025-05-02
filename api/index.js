@@ -11,7 +11,6 @@ const app = express();
 app.use(express.json());
 
 app.use("/users", userRoute);
-app.use("/SecuredRoute", userRoute);
 app.use("/", userRoute);
 
 app.get("/", (req, res) => {
