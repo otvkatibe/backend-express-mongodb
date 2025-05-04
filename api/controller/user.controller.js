@@ -8,13 +8,13 @@ const register = async (req, res) => {
         return res.status(400).json({ message: 'Name, email and password are required' });
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Validates email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(req.body.email)) {
         console.log("Invalid email format:", req.body.email);
         return res.status(400).json({ message: 'Invalid email format' });
     }
 
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // Minimum 8 characters, at least one letter and one number
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!passwordRegex.test(req.body.password)) {
         console.error("Invalid password format:", req.body.password);
         return res.status(400).json({ message: 'Invalid password format. Password must be at least 8 characters long and include at least one letter and one number.' });
@@ -47,8 +47,8 @@ const login = async (req, res) => {
 
     const { name, email, password } = req.body;
 
-    if ((!email && !password) || !password) {
-        console.log("Email and password are required", email, password);
+    if ((!email && !name) || !password) {
+        console.log("Email or username, and password are required", email, name);
         return res.status(400).json({ message: 'Email and password are required' });
     }
 
